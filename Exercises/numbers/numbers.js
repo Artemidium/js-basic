@@ -7,10 +7,12 @@ console.log(parseInt(binary, 2));
 console.log(parseInt(octal, 8));
 console.log(parseInt(hexadecimal, 16));
 
-// Functions are not studied
+// Implement function `extractNumbers` which will leave only numbers in passed string.
 function extractNumbers (text) {
-  return null;
+  return parseInt(text);
 }
+
+console.log(extractNumbers('3423sdkfshdkfhsdkf'));
 
 // Declare a variable with decimal value and convert to binary, octal and hexadecimal.
 const decimal = 666;
