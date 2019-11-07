@@ -12,7 +12,26 @@ console.log(`My favourite animal is a ${myFavouriteAnimal}!`);
 
 // Declare a variable which contain name and surname of your favourite writer in lowercase. Log his/her name with capitals first letters.
 const myFavouriteWriter = 'jerome david salinger';
-// eslint-disable-next-line max-len
-console.log(myFavouriteWriter[0].toUpperCase() + myFavouriteWriter.slice(1, 7) + myFavouriteWriter[7].toUpperCase() + myFavouriteWriter.slice(8, 13) + myFavouriteWriter[13].toUpperCase() + myFavouriteWriter.slice(14));
+console.log(myFavouriteWriter.split(' ').map(element => element[0].toUpperCase() + element.slice(1)).join(' '));
 
-// Additional tasks are difficult for me now. I will do them later.
+/*
+Declare a function which will receive password string. Check is password strong enough:
+  - should contain at least one capital letter;
+  - length no less than 8 characters.
+  - should contain at leas one special character.
+ */
+function receivePassword(password) {
+  if (password === password.toLowerCase()) {
+    console.log('Password should contain at least one capital letter');
+  }
+  if (password.length <= 8) {
+    console.log('Password length should be no less than 8 characters');
+  }
+  if (!password.match(/.*[^A-Za-z0-9]/)) {
+    console.log('Password should contain at least one special character');
+  } else {
+    console.log('Password is strong!');
+  }
+}
+
+receivePassword('123');
