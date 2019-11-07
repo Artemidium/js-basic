@@ -7,16 +7,16 @@ const codeToMissingComplexityElement = {
 
 function getMissingComplexityElementCode(password) {
   if (!password) {
-    return codeToMissingComplexityElement[3];
+    return 3;
   }
   if (password.length <= 8) {
-    return codeToMissingComplexityElement[0];
+    return 0;
   }
   if (password === password.toLowerCase()) {
-    return codeToMissingComplexityElement[1];
+    return 1;
   }
   if (!password.match(/.*[^A-Za-z0-9]/)) {
-    return codeToMissingComplexityElement[2];
+    return 2;
   }
   return 'Good job!';
 }
@@ -24,17 +24,17 @@ function getMissingComplexityElementCode(password) {
 function getErrorMessage(getMissingComplexityElementCode) {
   // eslint-disable-next-line default-case
   switch (getMissingComplexityElementCode) {
-  case 'cannot be empty':
-    console.log('Password cannot be empty. Please enter a password.');
+  case 3:
+    console.log(codeToMissingComplexityElement[3]);
     break;
-  case 'length':
-    console.log('Password should contain no less than 8 characters.');
+  case 0:
+    console.log(codeToMissingComplexityElement[0]);
     break;
-  case 'capital letter':
-    console.log('Password should contain at least one capital letter.');
+  case 1:
+    console.log(codeToMissingComplexityElement[1]);
     break;
-  case 'special character':
-    console.log('Password should contain at leas one special character.');
+  case 2:
+    console.log(codeToMissingComplexityElement[2]);
     break;
   default:
     console.log('Password is strong!');
